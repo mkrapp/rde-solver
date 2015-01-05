@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project name="Travelling Wave Solutions for Reaction Diffusion Systems" default="run">
+  
+	<target name="clean">
+    <delete dir="build"/>
+  </target>
+  
+	<target name="compile">
+    <mkdir dir="build/classes"/>
+    <javac srcdir="src" destdir="build/classes" includeantruntime="false">
+      <classpath>
+        <pathelement path="libraries/commons-cli-1.1.jar"/>
+      </classpath>
+      <include name="controlling/RDEController.java"/>
+      <include name="models/BeelerReuterModel.java"/>
+      <include name="models/FentonKarmaModel.java"/>
+      <include name="models/FitzHughNagumoModel.java"/>
+      <include name="models/HodgkinHuxleyModel.java"/>
+      <include name="models/KarmaModel.java"/>
+      <include name="models/MinimalModelEndo.java"/>
+      <include name="models/MinimalModelEpi.java"/>
+      <include name="models/MinimalModelEpiTWS.java"/>
+      <include name="models/MinimalModelM.java"/>
+      <include name="models/Oregonator.java"/>
+      <include name="models/RDEModel.java"/>
+      <include name="models/tenTusscher.java"/>
+      <include name="moduls/TravellingWave.java"/>
+      <include name="rdeapprox/InitCondition.java"/>
+      <include name="rdeapprox/RDESolver.java"/>
+      <include name="utils/MyLogger.java"/>
+      <include name="utils/Parser.java"/>
+      <include name="utils/Printer.java"/>
+      <include name="utils/PropertiesManager.java"/>
+      <include name="utils/Writer.java"/>
+    </javac>
+  </target>
+  
+	<target name="jar" depends="clean,compile">
+    <mkdir dir="build/jar"/>
+    <jar destfile="build/jar/TravellingWave.jar" basedir="build/classes">
+      <manifest>
+        <attribute name="Main-Class" value="moduls.TravellingWave"/>
+      </manifest>
+    </jar>
+  </target>
+	
+  <target name="run" depends="clean,compile,jar">
+    <java jar="build/jar/TravellingWave.jar" fork="true">
+      <arg line="spiral"/>
+    </java>
+  </target>
+
+</project>
