@@ -21,7 +21,7 @@ public class TravellingWave {
 	private static Logger logger = getLogger(TravellingWave.class
 			.getSimpleName(), Level.ALL);
 
-	private static RDEController rc = new RDEController("bla.config",
+	private static RDEController rc = new RDEController("tws.config",
 			"rde.config");
 
 	private final static double STRENGTH = getDouble(rc.getProperties()
@@ -65,7 +65,7 @@ public class TravellingWave {
 		Properties p = loadProperties("rde.config");
 		p.setProperty("dimension", "" + 1);
 		storeProperties(p, "rde.config");
-		RDEController r = new RDEController("bla.config", "rde.config");
+		RDEController r = new RDEController("tws.config", "rde.config");
 		r.stimulate(0, 0, STRENGTH);
 		while (r.getData(0, (int) 5 * DIMX / 6, 0) < THRESHOLD) {
 			r.doTimeSteps(1);

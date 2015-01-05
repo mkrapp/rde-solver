@@ -9,7 +9,7 @@
     <mkdir dir="build/classes"/>
     <javac srcdir="src" destdir="build/classes" includeantruntime="false">
       <classpath>
-        <pathelement path="libraries/commons-cli-1.1.jar"/>
+        <pathelement path="libraries/commons-cli-1.2.jar"/>
       </classpath>
       <include name="controlling/RDEController.java"/>
       <include name="models/BeelerReuterModel.java"/>
