@@ -28,3 +28,7 @@ Example
 Here's a spiral wave solution for the [FitzHugh-Nagumo Model](http://en.wikipedia.org/wiki/FitzHugh–Nagumo_model):
 
 ![spiral](https://cloud.githubusercontent.com/assets/5938262/5614071/46ef5958-94ed-11e4-80ce-964830fb1eb7.gif)
+
+Here's the excitation wave of the same model propagating from a point stimulus:
+
+![target](https://cloud.githubusercontent.com/assets/5938262/5627334/f866c74e-9596-11e4-9549-a07176d3b0e0.gif)
