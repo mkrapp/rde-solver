@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <project name="Travelling Wave Solutions for Reaction Diffusion Systems" default="run">
   
-	<target name="clean">
+  <target name="clean">
     <delete dir="build"/>
   </target>
   
-	<target name="compile">
+  <target name="compile">
     <mkdir dir="build/classes"/>
     <javac srcdir="src" destdir="build/classes" includeantruntime="false">
-      <classpath>
-        <pathelement path="libraries/commons-cli-1.2.jar"/>
-      </classpath>
       <include name="controlling/RDEController.java"/>
       <include name="models/BeelerReuterModel.java"/>
       <include name="models/FentonKarmaModel.java"/>
@@ -35,7 +32,7 @@
     </javac>
   </target>
   
-	<target name="jar" depends="clean,compile">
+  <target name="jar" depends="clean,compile">
     <mkdir dir="build/jar"/>
     <jar destfile="build/jar/TravellingWave.jar" basedir="build/classes">
       <manifest>
