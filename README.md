@@ -4,7 +4,6 @@ rde-solver
 This is a Java framework to solve 2D reaction-diffusion systems/models. I used it 2008 for my diploma thesis ([link](https://www.mariokrapp.com/docs/diplomarbeit_mario_krapp.pdf)).
 Several RDE models are supported. Have a look into `src/models`. To name a few:
 
-=======
 * [Hodgkin-Huxley Model](http://en.wikipedia.org/wiki/Hodgkin–Huxley_model)
 * [FitzHugh-Nagumo Model](http://en.wikipedia.org/wiki/FitzHugh–Nagumo_model)
 * [Beeler-Reuter Model](http://jp.physoc.org/content/268/1/177)
